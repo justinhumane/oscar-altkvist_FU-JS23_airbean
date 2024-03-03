@@ -1,3 +1,4 @@
+import FooterComp from "../components/Footer/Footer";
 import HeaderComp from "../components/Header/Header";
 
 const MenuPage = () => {
@@ -5,6 +6,7 @@ const MenuPage = () => {
     <div>
       <HeaderComp />
       <h1>Meny</h1>
+      <FooterComp />
     </div>
   );
 };
