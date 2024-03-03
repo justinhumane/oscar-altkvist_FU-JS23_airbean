@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: url(../../assets/header.png) no-repeat;
+  height: 7.0625rem;
+  padding: 1rem;
+}
+
+.menu-icon,
+.cart-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icon {
+  background: #fff;
+}
+.cart-icon {
+  background: #2f2926;
+}

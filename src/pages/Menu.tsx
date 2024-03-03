@@ -1,5 +1,12 @@
+import HeaderComp from "../components/Header/Header";
+
 const MenuPage = () => {
-  return <h1>Meny</h1>;
+  return (
+    <div>
+      <HeaderComp />
+      <h1>Meny</h1>
+    </div>
+  );
 };
 
 export default MenuPage;
