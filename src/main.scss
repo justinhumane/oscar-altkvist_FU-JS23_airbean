@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Rufina:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Work Sans", sans-serif;
+}
+
+#root {
+  background: red;
+  width: 375px;
+  height: 667px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "PT Serif", serif;
+}
