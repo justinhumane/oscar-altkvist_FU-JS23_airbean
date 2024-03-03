@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LandingPage from "./pages/Landing";
-import MenuPage from "./pages/Menu";
+import LandingPage from "./pages/Landing/Landing";
+import MenuPage from "./pages/Menu/Menu";
 import AboutPage from "./pages/About";
 import CartPage from "./pages/Cart";
 import StatusPage from "./pages/Status";

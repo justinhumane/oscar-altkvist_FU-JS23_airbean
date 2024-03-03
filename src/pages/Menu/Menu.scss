@@ -1,0 +1,20 @@
+@use "../../sass/" as *;
+@use "sass:map";
+
+.menu {
+  background: map.get($theme-colors, "pink");
+  color: map.get($theme-colors, "brown");
+
+  & > .content {
+    padding: 0.5rem 1.5rem;
+
+    & > h1 {
+      text-align: center;
+    }
+
+    & > .menu-items {
+      @include flex($direction: column, $gap: 1rem);
+      margin: 1rem 0;
+    }
+  }
+}

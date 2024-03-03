@@ -1,0 +1,35 @@
+@use "../../sass/" as *;
+@use "sass:map";
+
+.menu-item {
+  @include flex($align: center, $gap: 1rem);
+
+  & .add-item {
+    background: map.get($theme-colors, "brown");
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+    @include center-div;
+  }
+
+  & > .item-info {
+    width: 100%;
+
+    & > .top-row {
+      @include flex($justify: space-between);
+      font-family: "PT Sans", sans-serif;
+      font-size: 1.4375rem;
+      font-weight: bold;
+
+      & > *:first-child {
+        width: 100%;
+
+        border-bottom: 1px dotted map.get($theme-colors, "brown");
+      }
+    }
+
+    & > .bottom-row {
+      font-size: 0.75rem;
+    }
+  }
+}

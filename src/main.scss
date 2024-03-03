@@ -1,3 +1,4 @@
+@use "./sass/" as *;
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Rufina:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
@@ -10,10 +11,8 @@ body {
   width: 100vw;
   height: 100vh;
   background: #f1f1f1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: "Work Sans", sans-serif;
+  @include center-div;
 }
 
 #root {

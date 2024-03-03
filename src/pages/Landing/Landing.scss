@@ -1,15 +1,12 @@
-* {
-  color: #fff;
-  text-transform: uppercase;
-}
-
 .landing-page {
-  background: url(../assets/landing-left.svg) no-repeat left center,
-    url(../assets/landing-right.svg) no-repeat right center, #38846d;
+  background: url(../../assets/landing-left.svg) no-repeat left center,
+    url(../../assets/landing-right.svg) no-repeat right center, #38846d;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .logo {

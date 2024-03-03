@@ -1,5 +1,5 @@
 import "./Landing.scss";
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
