@@ -7,21 +7,21 @@
   align-items: center;
   color: #fff;
   text-transform: uppercase;
-}
 
-.logo {
-  background: rgb(93, 142, 125);
-  border-radius: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-}
+  & > .logo {
+    background: rgb(93, 142, 125);
+    border-radius: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
 
-h1 {
-  font-family: "Rufina";
-  font-size: 2.625rem;
-}
+  & > h1 {
+    font-family: "Rufina";
+    font-size: 2.625rem;
+  }
 
-p {
-  font-size: 0.5625rem;
-  letter-spacing: 0.3rem;
+  & > p {
+    font-size: 0.5625rem;
+    letter-spacing: 0.3rem;
+  }
 }

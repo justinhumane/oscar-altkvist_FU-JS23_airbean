@@ -1,0 +1,37 @@
+@use "../../sass/" as *;
+@use "sass:map";
+
+.about {
+  background: map.get($theme-colors, "pink");
+  color: map.get($theme-colors, "brown");
+
+  & > .content {
+    padding: 0.5rem 1.5rem;
+
+    & > h1 {
+      margin: 1rem 0;
+    }
+
+    & > p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      font-size: 0.75rem;
+
+      &:first-of-type {
+        font-weight: 600;
+        font-size: 0.875rem;
+      }
+    }
+
+    & > .profile {
+      @include flex($direction: column, $align: center);
+      margin: 2rem 0;
+
+      & > img {
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 100%;
+      }
+    }
+  }
+}
