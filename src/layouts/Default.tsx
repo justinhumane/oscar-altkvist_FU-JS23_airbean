@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, MouseEvent } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import HeaderComp from "../components/Header/Header";
 import FooterComp from "../components/Footer/Footer";
@@ -7,9 +7,14 @@ const DefaultLayout = () => {
   const location = useLocation();
 
   const [menuToggle, setMenuToggle] = useState(false);
-
   const handleMenuToggle = () => {
     setMenuToggle(!menuToggle);
+  };
+
+  const [cartToggle, setCartToggle] = useState(false);
+  const handleCartToggle = (e: MouseEvent) => {
+    if (e.currentTarget != e.target) return;
+    setCartToggle(!cartToggle);
   };
 
   const bgColor = {
@@ -17,8 +22,13 @@ const DefaultLayout = () => {
   };
 
   return (
-    <div className={"container " + bgColor.backgroundColor + (menuToggle ? " overflow-hidden" : "")}>
-      <HeaderComp menuToggle={menuToggle} handleMenuToggle={handleMenuToggle} />
+    <div className={"container " + bgColor.backgroundColor + (menuToggle || cartToggle ? " overflow-hidden" : "")}>
+      <HeaderComp
+        menuToggle={menuToggle}
+        handleMenuToggle={handleMenuToggle}
+        cartToggle={cartToggle}
+        handleCartToggle={(e) => handleCartToggle(e)}
+      />
       <Outlet />
       <FooterComp />
     </div>

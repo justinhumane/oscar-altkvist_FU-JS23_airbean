@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import FooterComp from "../../components/Footer/Footer";
-import HeaderComp from "../../components/Header/Header";
 import "./Menu.scss";
-import { Menu } from "../../types/menu";
-import MenuItem from "../../components/MenuItem/MenuItem";
+import { MenuItem } from "../../types/menuItem";
+import MenuItemComponent from "../../components/MenuItem/MenuItem";
 
 const MenuPage = () => {
-  const [menu, setMenu] = useState<Menu[]>([]);
+  const [menu, setMenu] = useState<MenuItem[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +29,7 @@ const MenuPage = () => {
         <h1>Meny</h1>
         <div className="menu-items">
           {menu.map((menuItem) => (
-            <MenuItem key={menuItem.id} item={menuItem} />
+            <MenuItemComponent key={menuItem.id} item={menuItem} />
           ))}
         </div>
       </div>

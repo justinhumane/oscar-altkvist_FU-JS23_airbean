@@ -1,8 +1,8 @@
 import add from "../../assets/add-icon.svg";
-import { Menu } from "../../types/menu";
+import { MenuItem } from "../../types/menuItem";
 import "./MenuItem.scss";
 
-const MenuItem = ({ item }: { item: Menu }) => {
+const MenuItemComponent = ({ item }: { item: MenuItem }) => {
   return (
     <div className="menu-item">
       <div>
@@ -21,4 +21,4 @@ const MenuItem = ({ item }: { item: Menu }) => {
   );
 };
 
-export default MenuItem;
+export default MenuItemComponent;

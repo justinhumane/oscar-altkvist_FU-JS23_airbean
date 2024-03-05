@@ -1,0 +1,31 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 667px;
+
+  &.hidden {
+    display: none;
+  }
+
+  & > .cart {
+    background: #fff;
+    width: 21.3125rem;
+    margin: 0 auto;
+    border-radius: 3px;
+    margin-top: 3.8rem;
+
+    &::before {
+      content: "";
+      background: #fff;
+      width: 1.375rem;
+      height: 1.375rem;
+      border-radius: 2px;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 3.5rem;
+      right: 1.8rem;
+    }
+  }
+}
