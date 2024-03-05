@@ -19,14 +19,20 @@ const CartComponent = ({
   return (
     <div className={"overlay" + (cartToggle ? "" : " hidden")} onClick={(e) => handleCartToggle(e as MouseEvent)}>
       <div className="cart">
-        <h1>Din beställning</h1>
-        <div className="cart-items">
-          {cartStore.cart.map((cartItem) => (
-            <CartItemComponent cartItem={cartItem} />
-          ))}
-        </div>
-        <div>Totalt: {totalPrice}</div>
-        <button>Take my money!</button>
+        {cartStore.cart.length > 0 ? (
+          <>
+            <h1>Din beställning</h1>
+            <div className="cart-items">
+              {cartStore.cart.map((cartItem) => (
+                <CartItemComponent cartItem={cartItem} />
+              ))}
+            </div>
+            <div>Totalt: {totalPrice}</div>
+            <button>Take my money!</button>
+          </>
+        ) : (
+          <div>Din kundvagn är tom!</div>
+        )}
       </div>
     </div>
   );
