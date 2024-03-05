@@ -1,4 +1,5 @@
 @use "./sass/" as *;
+@use "sass:map";
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Rufina:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
@@ -15,18 +16,11 @@ body {
   @include center-div;
 }
 
-#root {
+.container {
   width: 375px;
   height: 667px;
   overflow-x: hidden;
   overflow-y: scroll;
-}
-
-#root > * {
-  min-width: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 h1,
@@ -34,4 +28,16 @@ h2,
 h3,
 h4 {
   font-family: "PT Serif", serif;
+}
+
+.bg-pink {
+  background: map.get($theme-colors, "pink");
+}
+
+.bg-brown {
+  background: map.get($theme-colors, "brown");
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }

@@ -1,12 +1,9 @@
-import FooterComp from "../../components/Footer/Footer";
-import HeaderComp from "../../components/Header/Header";
 import ownerPicture from "../../assets/owner.jpg";
 import "./About.scss";
 
 const AboutPage = () => {
   return (
     <div className="about">
-      <HeaderComp />
       <div className="content">
         <h1>Vårt kaffe</h1>
         <p>
@@ -35,7 +32,6 @@ const AboutPage = () => {
           <p>VD & Grundare</p>
         </div>
       </div>
-      <FooterComp />
     </div>
   );
 };

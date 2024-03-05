@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/Landing/Landing";
 import MenuPage from "./pages/Menu/Menu";
 import AboutPage from "./pages/About/About";
@@ -8,6 +8,7 @@ import CartPage from "./pages/Cart";
 import StatusPage from "./pages/Status";
 import ProfilePage from "./pages/Profile";
 import "./main.scss";
+import DefaultLayout from "./layouts/Default";
 
 const router = createBrowserRouter([
   {
@@ -15,24 +16,29 @@ const router = createBrowserRouter([
     element: <LandingPage />,
   },
   {
-    path: "/menu",
-    element: <MenuPage />,
-  },
-  {
-    path: "/about",
-    element: <AboutPage />,
-  },
-  {
-    path: "/cart",
-    element: <CartPage />,
+    element: <DefaultLayout />,
+    children: [
+      {
+        path: "/menu",
+        element: <MenuPage />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
+      },
+      {
+        path: "/profile",
+        element: <ProfilePage />,
+      },
+    ],
   },
   {
     path: "/status",
     element: <StatusPage />,
-  },
-  {
-    path: "/profile",
-    element: <ProfilePage />,
   },
 ]);
 

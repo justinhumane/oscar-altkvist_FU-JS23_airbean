@@ -6,12 +6,14 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="landing-page" onClick={() => navigate("/menu")}>
-      <div className="logo">
-        <img src={logo} alt="" />
+    <div className="container">
+      <div className="landing-page" onClick={() => navigate("/menu")}>
+        <div className="logo">
+          <img src={logo} alt="" />
+        </div>
+        <h1>Air Bean</h1>
+        <p>Dronedelivered coffee</p>
       </div>
-      <h1>Air Bean</h1>
-      <p>Dronedelivered coffee</p>
     </div>
   );
 };

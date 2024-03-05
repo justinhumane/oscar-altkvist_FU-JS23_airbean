@@ -27,7 +27,6 @@ const MenuPage = () => {
 
   return (
     <div className="menu">
-      <HeaderComp />
       <div className="content">
         <h1>Meny</h1>
         <div className="menu-items">
@@ -36,7 +35,6 @@ const MenuPage = () => {
           ))}
         </div>
       </div>
-      <FooterComp />
     </div>
   );
 };
