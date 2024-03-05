@@ -1,8 +1,6 @@
 import menuOpen from "../../assets/menu-icon.svg";
-import menuClose from "../../assets/menu-close-icon.svg";
 import cart from "../../assets/cart-icon.svg";
 import "./Header.scss";
-import { Link } from "react-router-dom";
 import NavComponent from "../Nav/Nav";
 
 const HeaderComp = ({ menuToggle, handleMenuToggle }: { menuToggle: boolean; handleMenuToggle: () => void }) => {
