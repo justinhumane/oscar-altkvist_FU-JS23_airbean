@@ -6,17 +6,17 @@
   background: url(../../assets/header.png) no-repeat;
   height: 7.0625rem;
 
-  & .menu-icon,
-  & .cart-icon {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 100%;
-    @include center-div;
-  }
-
   & > header {
     padding: 1rem;
     @include flex($justify: space-between, $align: flex-start);
+
+    & > .menu-icon,
+    & > .cart-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 100%;
+      @include center-div;
+    }
 
     & > .menu-icon {
       background: #fff;
@@ -24,6 +24,22 @@
 
     & > .cart-icon {
       background: #2f2926;
+      position: relative;
+
+      & > .indicator {
+        position: absolute;
+        top: -0.2rem;
+        right: 0;
+        font-family: "PT Serif", serif;
+        font-weight: bold;
+        font-size: 0.75rem;
+        color: #fff;
+        background: map.get($theme-colors, "orange");
+        border-radius: 100%;
+        width: 1.375rem;
+        height: 1.375rem;
+        @include center-div;
+      }
     }
   }
 }

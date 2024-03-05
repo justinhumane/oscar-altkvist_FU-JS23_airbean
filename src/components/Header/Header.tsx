@@ -1,9 +1,10 @@
 import { MouseEvent } from "react";
-import menuOpen from "../../assets/menu-icon.svg";
-import cart from "../../assets/cart-icon.svg";
-import "./Header.scss";
-import NavComponent from "../Nav/Nav";
 import CartComponent from "../Cart/Cart";
+import NavComponent from "../Nav/Nav";
+import cart from "../../assets/cart-icon.svg";
+import menuOpen from "../../assets/menu-icon.svg";
+import "./Header.scss";
+import { useCartStore } from "../../stores/cart";
 
 const HeaderComp = ({
   menuToggle,
@@ -16,6 +17,9 @@ const HeaderComp = ({
   cartToggle: boolean;
   handleCartToggle: (e: MouseEvent) => void;
 }) => {
+  const cartStore = useCartStore();
+  const totalQuantity = cartStore.cart.reduce((total, cartItem) => total + cartItem.amount, 0);
+
   return (
     <>
       <div className="header">
@@ -24,6 +28,7 @@ const HeaderComp = ({
             <img src={menuOpen} alt="" />
           </div>
           <div className="cart-icon" onClick={(e) => handleCartToggle(e)}>
+            <div className="indicator">{totalQuantity}</div>
             <img src={cart} alt="" onClick={(e) => handleCartToggle(e)} />
           </div>
         </header>

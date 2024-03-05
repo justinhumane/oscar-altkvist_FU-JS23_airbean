@@ -1,16 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { MenuItem } from "../types/menuItem";
-
-interface CartState {
-  cart: CartItem[];
-  addToCart: (item: MenuItem) => void;
-}
-
-interface CartItem {
-  item: MenuItem;
-  amount: number;
-}
+import { CartState } from "../types/cart";
 
 export const useCartStore = create<CartState>()(
   persist(
@@ -32,21 +22,21 @@ export const useCartStore = create<CartState>()(
           }
         });
       },
-      incrementQuantity: (itemId: MenuItem["id"]) => {
+      incrementQuantity: (itemId) => {
         set((state) => ({
           cart: state.cart.map((cartItem) =>
             cartItem.item.id === itemId ? { ...cartItem, amount: cartItem.amount + 1 } : cartItem
           ),
         }));
       },
-      decrementQuantity: (itemId: MenuItem["id"]) => {
+      decrementQuantity: (itemId) => {
         set((state) => ({
           cart: state.cart.map((cartItem) =>
             cartItem.item.id === itemId && cartItem.amount > 1 ? { ...cartItem, amount: cartItem.amount - 1 } : cartItem
           ),
         }));
       },
-      removeFromCart: (itemId: MenuItem["id"]) => {
+      removeFromCart: (itemId) => {
         set((state) => ({
           cart: state.cart.filter((cartItem) => cartItem.item.id !== itemId),
         }));
