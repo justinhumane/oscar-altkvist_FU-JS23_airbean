@@ -11,11 +11,13 @@ const HeaderComp = ({
   handleMenuToggle,
   cartToggle,
   handleCartToggle,
+  showCart,
 }: {
   menuToggle: boolean;
   handleMenuToggle: () => void;
   cartToggle: boolean;
   handleCartToggle: (e: MouseEvent) => void;
+  showCart: boolean;
 }) => {
   const cartStore = useCartStore();
   const totalQuantity = cartStore.cart.reduce((total, cartItem) => total + cartItem.amount, 0);
@@ -27,10 +29,14 @@ const HeaderComp = ({
           <div className="menu-icon" onClick={handleMenuToggle}>
             <img src={menuOpen} alt="" />
           </div>
-          <div className="cart-icon" onClick={(e) => handleCartToggle(e)}>
-            <div className="indicator">{totalQuantity}</div>
-            <img src={cart} alt="" onClick={(e) => handleCartToggle(e)} />
-          </div>
+          {showCart ? (
+            <div className="cart-icon" onClick={(e) => handleCartToggle(e)}>
+              <div className="indicator">{totalQuantity}</div>
+              <img src={cart} alt="" onClick={(e) => handleCartToggle(e)} />
+            </div>
+          ) : (
+            ""
+          )}
         </header>
         <NavComponent menuToggle={menuToggle} handleMenuToggle={handleMenuToggle} />
         <CartComponent cartToggle={cartToggle} handleCartToggle={(e) => handleCartToggle(e as unknown as MouseEvent)} />

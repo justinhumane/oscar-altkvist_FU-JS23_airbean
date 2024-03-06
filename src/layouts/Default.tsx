@@ -21,6 +21,8 @@ const DefaultLayout = () => {
     backgroundColor: location.pathname === "/about" || location.pathname === "/menu" ? "bg-pink" : "bg-brown",
   };
 
+  const showCart = location.pathname === "/about" || location.pathname === "/menu" ? true : false;
+
   return (
     <div className={"container " + bgColor.backgroundColor + (menuToggle || cartToggle ? " overflow-hidden" : "")}>
       <HeaderComp
@@ -28,9 +30,10 @@ const DefaultLayout = () => {
         handleMenuToggle={handleMenuToggle}
         cartToggle={cartToggle}
         handleCartToggle={(e) => handleCartToggle(e)}
+        showCart={showCart}
       />
       <Outlet />
-      <FooterComp />
+      {showCart ? <FooterComp /> : ""}
     </div>
   );
 };

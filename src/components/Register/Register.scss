@@ -1,0 +1,12 @@
+@use "../../sass/" as *;
+@use "sass:map";
+
+.register {
+  background: map.get($theme-colors, "pink");
+  padding: 1rem;
+  @include flex($direction: column);
+
+  & > form {
+    @include flex($direction: column);
+  }
+}

@@ -6,7 +6,7 @@ import MenuPage from "./pages/Menu/Menu";
 import AboutPage from "./pages/About/About";
 import CartPage from "./pages/Cart";
 import StatusPage from "./pages/Status";
-import ProfilePage from "./pages/Profile";
+import ProfilePage from "./pages/Profile/Profile";
 import "./main.scss";
 import DefaultLayout from "./layouts/Default";
 

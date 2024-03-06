@@ -1,0 +1,32 @@
+@use "../../sass/" as *;
+@use "sass:map";
+
+.user-profile {
+  color: #fff;
+  @include flex($direction: column, $gap: 2rem);
+
+  & > .top {
+    @include flex($direction: column, $align: center);
+
+    & > h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 1.2;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    & > p {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.2;
+    }
+  }
+
+  & > .order-history {
+    & > h3 {
+      font-size: 1.375rem;
+      font-weight: bold;
+      margin-bottom: 0.8rem;
+    }
+  }
+}
