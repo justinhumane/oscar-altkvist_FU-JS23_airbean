@@ -1,0 +1,40 @@
+@use "../../sass/" as *;
+@use "sass:map";
+
+.order-history-list {
+  @include flex($direction: column, $gap: 0.5rem);
+
+  & > * {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+
+    & > *:first-child {
+      font-weight: bold;
+    }
+
+    & > *:nth-child(-n + 2) {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    & > *:nth-child(even) {
+      text-align: right;
+    }
+  }
+
+  & > *:nth-last-child(2) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  & > *:last-child {
+    border-bottom: 0;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}

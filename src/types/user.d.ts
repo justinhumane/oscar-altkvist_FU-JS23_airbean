@@ -4,10 +4,16 @@ export interface Order {
   amount: number;
 }
 
+export interface OrderHistoryOrder {
+  date: Date;
+  orderNumber: string;
+  total: number;
+}
+
 export interface User {
   name: string;
   email: string;
-  orderHistory: Order[] | [];
+  orderHistory: OrderHistoryOrder[] | [];
   gdpr: boolean;
 }
 

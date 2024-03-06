@@ -1,5 +1,6 @@
 import profilePicture from "../../assets/profile.svg";
 import { useUserStore } from "../../stores/user";
+import OrderHistoryComponent from "../OrderHistory/OrderHistory";
 import "./UserProfile.scss";
 
 const UserProfileComponent = () => {
@@ -14,7 +15,7 @@ const UserProfileComponent = () => {
       </div>
       <div className="order-history">
         <h3>Orderhistorik</h3>
-        {userStore.user.orderHistory.length > 0 ? "Här visas orderhistorik" : "Du har inga tidigare ordrar."}
+        {userStore.user.orderHistory.length > 0 ? <OrderHistoryComponent /> : "Du har inga tidigare ordrar."}
       </div>
     </div>
   );
