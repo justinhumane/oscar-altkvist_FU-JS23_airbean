@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/Landing/Landing";
 import MenuPage from "./pages/Menu/Menu";
 import AboutPage from "./pages/About/About";
-import CartPage from "./pages/Cart";
 import StatusPage from "./pages/Status/Status";
 import ProfilePage from "./pages/Profile/Profile";
 import "./main.scss";
@@ -25,10 +24,6 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutPage />,
-      },
-      {
-        path: "/cart",
-        element: <CartPage />,
       },
       {
         path: "/profile",

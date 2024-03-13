@@ -23,11 +23,24 @@
     font-weight: bold;
     line-height: 1.2;
     text-align: center;
-    @include flex(column);
+    height: 37.3125rem;
+    @include flex($direction: column, $justify: center, $gap: 4rem);
 
     & > a {
       color: #fff;
       text-decoration: none;
+      position: relative;
+    }
+
+    & > a:not(:last-child)::after {
+      content: "";
+      width: 3rem;
+      height: 1px;
+      background: #ffffff20;
+      position: absolute;
+      bottom: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
