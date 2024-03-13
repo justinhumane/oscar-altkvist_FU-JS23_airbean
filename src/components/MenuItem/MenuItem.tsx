@@ -16,6 +16,7 @@ const MenuItemComponent = ({ item }: { item: MenuItem }) => {
       <div className="item-info">
         <div className="top-row">
           <div>{item.title}</div>
+          <div className="dots"></div>
           <div>{item.price}</div>
         </div>
         <div className="bottom-row">{item.desc}</div>
