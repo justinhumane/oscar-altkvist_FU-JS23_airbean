@@ -10,7 +10,10 @@ const CartItemComponent = ({ cartItem }: { cartItem: CartItem }) => {
   return (
     <div key={cartItem.item.id} className="cart-item">
       <div className="item-info">
-        <div className="top-row">{cartItem.item.title}</div>
+        <div className="top-row">
+          <div>{cartItem.item.title}</div>
+          <div className="dots"></div>
+        </div>
         <div className="bottom-row">{cartItem.item.price * cartItem.amount} kr</div>
       </div>
       <div className="amount">

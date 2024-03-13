@@ -37,37 +37,6 @@
     & > .cart-items {
       @include flex($direction: column, $gap: 1rem);
       margin: 1rem 0;
-
-      & > .cart-item {
-        padding-right: 1rem;
-        @include flex($align: center, $gap: 1rem);
-
-        & > .item-info {
-          width: 100%;
-
-          & > .top-row {
-            font-family: "PT Sans", sans-serif;
-            font-size: 1.25rem;
-            font-weight: bold;
-            width: 100%;
-            border-bottom: 1px dotted map.get($theme-colors, "brown");
-          }
-
-          & > .bottom-row {
-            font-size: 0.75rem;
-          }
-        }
-
-        & > .amount {
-          font-size: 0.875rem;
-          font-weight: 600;
-          @include flex($direction: column, $align: center, $gap: 0.5rem);
-
-          & > img {
-            cursor: pointer;
-          }
-        }
-      }
     }
   }
 }

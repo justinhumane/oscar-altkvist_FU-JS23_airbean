@@ -9,11 +9,17 @@
     width: 100%;
 
     & > .top-row {
-      font-family: "PT Sans", sans-serif;
+      @include flex($gap: 0.2rem);
+      font-family: "PT Serif", serif;
       font-size: 1.25rem;
       font-weight: bold;
       width: 100%;
-      border-bottom: 1px dotted map.get($theme-colors, "brown");
+
+      & > .dots {
+        flex: 1;
+        background: url(../../assets/line.png) repeat-x;
+        background-position: 0 1.3rem;
+      }
     }
 
     & > .bottom-row {
