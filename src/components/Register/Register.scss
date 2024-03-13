@@ -3,10 +3,69 @@
 
 .register {
   background: map.get($theme-colors, "pink");
-  padding: 1rem;
+  border-radius: 3px;
+  padding: 2rem 1rem;
+  text-align: center;
   @include flex($direction: column);
 
   & > form {
-    @include flex($direction: column);
+    text-align: left;
+    margin-top: 2rem;
+    @include flex($direction: column, $gap: 1rem);
+
+    & > div {
+      @include flex($direction: column, $gap: 0.2rem);
+
+      & > label {
+        color: map.get($theme-colors, "brown");
+        font-size: 0.75rem;
+      }
+
+      & > input {
+        background: transparent;
+        border: 1px solid map.get($theme-colors, "brown");
+        border-radius: 6px;
+        padding: 1rem;
+      }
+    }
+
+    & > div > .checkbox {
+      position: relative;
+      @include flex($direction: row, $gap: 0.5rem);
+
+      & > input {
+        display: none;
+      }
+
+      & > .checkmark {
+        width: 1rem;
+        height: 1rem;
+        padding: 2px;
+        border: 1px solid map.get($theme-colors, "brown");
+        border-radius: 100%;
+        @include center-div;
+      }
+
+      & > input:checked ~ .checkmark > span {
+        position: absolute;
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 100%;
+        background: map.get($theme-colors, "green-dark");
+      }
+    }
+
+    & > button {
+      font-family: "PT Serif";
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: map.get($theme-colors, "brown");
+      color: #fff;
+      border: 0;
+      border-radius: 3.125rem;
+      padding: 1rem 2rem;
+      width: 80%;
+      margin: 0 auto;
+    }
   }
 }
