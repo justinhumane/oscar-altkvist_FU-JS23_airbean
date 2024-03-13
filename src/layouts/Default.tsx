@@ -21,7 +21,8 @@ const DefaultLayout = () => {
     backgroundColor: location.pathname === "/about" || location.pathname === "/menu" ? "bg-pink" : "bg-brown",
   };
 
-  const showCart = location.pathname === "/about" || location.pathname === "/menu" ? true : false;
+  const showCart = location.pathname === "/menu" ? true : false;
+  const showFooter = location.pathname === "/about" || location.pathname === "/menu" ? true : false;
 
   return (
     <div className={"container " + bgColor.backgroundColor + (menuToggle || cartToggle ? " overflow-hidden" : "")}>
@@ -33,7 +34,7 @@ const DefaultLayout = () => {
         showCart={showCart}
       />
       <Outlet />
-      {showCart ? <FooterComp /> : ""}
+      {showFooter ? <FooterComp /> : ""}
     </div>
   );
 };
