@@ -18,8 +18,8 @@
 
     & > .top-row {
       @include flex($gap: 0.2rem);
-      font-family: "PT Sans", sans-serif;
-      font-size: 1.4375rem;
+      font-family: "PT Serif", sans-serif;
+      font-size: 1.3375rem;
       font-weight: bold;
 
       & > .dots {

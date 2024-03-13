@@ -17,7 +17,7 @@ const MenuItemComponent = ({ item }: { item: MenuItem }) => {
         <div className="top-row">
           <div>{item.title}</div>
           <div className="dots"></div>
-          <div>{item.price}</div>
+          <div>{item.price} kr</div>
         </div>
         <div className="bottom-row">{item.desc}</div>
       </div>
