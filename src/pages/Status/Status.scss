@@ -1,0 +1,34 @@
+@use "../../sass/" as *;
+@use "sass:map";
+
+.status {
+  height: 100%;
+  background: map.get($theme-colors, "orange");
+  padding: 5rem 2.5rem;
+  color: #fff;
+  @include flex($direction: column, $justify: space-between, $align: center, $gap: 2rem);
+
+  & > .order-number {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  & > h2 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  & > .eta {
+    font-size: 1.375rem;
+  }
+
+  & > button {
+    background: #fff;
+    color: #000;
+    border-radius: 3.125rem;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}

@@ -10,10 +10,21 @@ export const useUserStore = create<UserState>()(
         email: "",
         orderHistory: [],
         gdpr: false,
+        lastOrderMade: null,
       },
       register: (user) => {
         set(() => {
           return { user: user };
+        });
+      },
+      setLastOrderMade: (orderNumber) => {
+        set((state) => {
+          return {
+            user: {
+              ...state.user,
+              lastOrderMade: orderNumber,
+            },
+          };
         });
       },
       addOrderToHistory: (order) => {

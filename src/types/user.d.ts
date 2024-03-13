@@ -15,10 +15,12 @@ export interface User {
   email: string;
   orderHistory: OrderHistoryOrder[] | [];
   gdpr: boolean;
+  lastOrderMade: string | null;
 }
 
 export interface UserState {
   user: User;
   register: (user: User) => void;
+  setLastOrderMade: (orderNumber: Order["orderNumber"]) => void;
   addOrderToHistory: (order) => void;
 }

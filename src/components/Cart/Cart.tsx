@@ -3,6 +3,7 @@ import { useCartStore } from "../../stores/cart";
 import CartItemComponent from "../CartItem/CartItem";
 import "./Cart.scss";
 import { useUserStore } from "../../stores/user";
+import { useNavigate } from "react-router-dom";
 
 const CartComponent = ({
   cartToggle,
@@ -11,13 +12,14 @@ const CartComponent = ({
   cartToggle: boolean;
   handleCartToggle: (e: MouseEvent) => void;
 }) => {
+  const navigate = useNavigate();
   const cartStore = useCartStore();
+  const userStore = useUserStore();
+
   const totalPrice = cartStore.cart.reduce((total, cartItem) => {
     const itemPrice = cartItem.item.price * cartItem.amount;
     return total + itemPrice;
   }, 0);
-
-  const userStore = useUserStore();
 
   const makeOrder = async () => {
     try {
@@ -32,16 +34,21 @@ const CartComponent = ({
 
       const data = await response.json();
 
-      console.log(data);
+      const today = new Date();
+
       if (data.eta && userStore.user.name !== "") {
         const orderData = {
-          date: new Date(),
+          date: today,
           orderNumber: data.orderNr,
           total: totalPrice,
         };
 
         userStore.addOrderToHistory(orderData);
       }
+
+      userStore.setLastOrderMade(data.orderNr);
+      cartStore.resetCart();
+      navigate("/status");
     } catch (error) {
       console.log(error);
     }

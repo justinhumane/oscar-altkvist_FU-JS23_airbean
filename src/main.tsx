@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/Landing/Landing";
 import MenuPage from "./pages/Menu/Menu";
 import AboutPage from "./pages/About/About";
 import CartPage from "./pages/Cart";
-import StatusPage from "./pages/Status";
+import StatusPage from "./pages/Status/Status";
 import ProfilePage from "./pages/Profile/Profile";
 import "./main.scss";
 import DefaultLayout from "./layouts/Default";

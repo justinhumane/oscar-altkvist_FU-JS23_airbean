@@ -57,6 +57,9 @@ export const useCartStore = create<CartState>()(
 
         return { details: { order: orderData } };
       },
+      resetCart: () => {
+        set({ cart: [] });
+      },
     }),
     {
       name: "cartStorage",

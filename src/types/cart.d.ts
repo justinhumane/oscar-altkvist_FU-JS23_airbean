@@ -8,6 +8,7 @@ export interface CartState {
   decrementQuantity: (itemId: MenuItem["id"]) => void;
   removeFromCart: (itemId: MenuItem["id"]) => void;
   prepareOrderData: (cart: CartItem[]) => OrderData;
+  resetCart: () => void;
 }
 
 export interface CartItem {
