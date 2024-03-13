@@ -65,7 +65,16 @@ const CartComponent = ({
                 <CartItemComponent key={cartItem.item.id} cartItem={cartItem} />
               ))}
             </div>
-            <div>Totalt: {totalPrice}</div>
+            <div className="cart-item">
+              <div className="item-info">
+                <div className="top-row">
+                  <div>Total</div>
+                  <div className="dots"></div>
+                  <div>{totalPrice} kr</div>
+                </div>
+                <div className="bottom-row">inkl moms + drönarleverans</div>
+              </div>
+            </div>
             <button onClick={makeOrder}>Take my money!</button>
           </>
         ) : (
